@@ -48,7 +48,7 @@ services:
       - 8080:8080
   # This section is for the Multiwoven services Backend and Frontend
   db:
-    image: postgres:latest
+    image: postgres:16
     environment:
       POSTGRES_PASSWORD: ${DB_PASSWORD}
       POSTGRES_USER: ${DB_USERNAME}
@@ -75,7 +75,7 @@ services:
   multiwoven-ui:
     build:
       context: ./ui
-      dockerfile: Dockerfile
+      dockerfile: Dockerfile.dev
     ports:
       - "8000:8000"
     depends_on:

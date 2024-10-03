@@ -5,7 +5,7 @@ FROM node:18-alpine
 WORKDIR /app
 
 # ENV Variable
-ENV VITE_API_HOST='https://api.multiwoven.com'
+ENV VITE_API_HOST='http://localhost:3000'
 
 # Copy package.json and package-lock.json (or yarn.lock if using Yarn)
 COPY package.json package-lock.json* ./
@@ -15,9 +15,6 @@ RUN npm ci
 
 # Copy the rest of your application code
 COPY . .
-
-# ENV Variable
-ENV VITE_API_HOST='https://api.multiwoven.com'
 
 EXPOSE 8000
 
