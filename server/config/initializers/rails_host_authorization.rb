@@ -4,6 +4,7 @@ unless Rails.env.test?
   # ALLOWED_HOST used for our self hosted EE deployments
   if ENV["ALLOWED_HOST"]
     Rails.application.config.hosts << ENV["ALLOWED_HOST"]
+    Rails.application.config.hosts << "localhost"
   else
     # Enterprise SAAS deployments
     Rails.application.config.hosts << ".squared.ai"

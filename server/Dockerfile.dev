@@ -26,9 +26,7 @@ RUN mv libduckdb/duckdb.* /usr/local/include
 RUN mv libduckdb/libduckdb.so /usr/local/lib
 
 # Unzip and Install DuckDB HTTPFS Extension 
-RUN ./gethttpfsextension.sh && \
-    gunzip httpfs.duckdb_extension.gz && \
-    mv httpfs.duckdb_extension /home/rails/.duckdb/extensions/v1.0.0/linux_arm64/
+RUN ./gethttpfsextension.sh
 
 RUN ldconfig /usr/local/lib
 
